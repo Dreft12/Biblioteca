@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - biblioteca@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="biblioteca">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="phpmyadmin"/>
+    <schema id="6" name="test"/>
+    <schema id="7" name="tarea"/>
+    <schema id="8" name="votos"/>
+    <table id="9" parent="1" name="libros"/>
+    <table id="10" parent="1" name="parametro"/>
+    <table id="11" parent="1" name="prestamos"/>
+    <table id="12" parent="1" name="valorparametro"/>
+    <table id="13" parent="1" name="detalleprestamo"/>
+    <table id="14" parent="1" name="usuarios"/>
+    <table id="15" parent="1" name="ipusuarios"/>
+    <column id="16" parent="9" name="IdLibro">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="9" name="ISBN">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="18" parent="9" name="Titulo">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="19" parent="9" name="ImgPortada">
+      <data-type>blob|0</data-type>
+    </column>
+    <column id="20" parent="9" name="Autor">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="21" parent="9" name="Editorial">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="22" parent="9" name="Cantidad">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="23" parent="9" name="IdIdioma">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="24" parent="9" name="IdPais">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="25" parent="9" name="NumPaginas">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="26" parent="9" name="Estante">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="27" parent="9" name="IdCategoria">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="28" parent="9" name="IdEstado">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="29" parent="9" name="FPublicacion">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+      <default-expression>&apos;0000-00-00&apos;</default-expression>
+    </column>
+    <column id="30" parent="9" name="FAgregado">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+      <default-expression>&apos;0000-00-00&apos;</default-expression>
+    </column>
+    <index id="31" parent="9" name="IdCategoria">
+      <columns>IdCategoria</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="32" parent="9" name="IdEstado">
+      <columns>IdEstado</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="33" parent="9" name="IdIdioma">
+      <columns>IdIdioma</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="34" parent="9" name="IdPais">
+      <columns>IdPais</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="35" parent="9" name="ISBN">
+      <columns>ISBN</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="36" parent="9" name="libros_IdLibro_uindex">
+      <columns>IdLibro</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="37" parent="9" name="PRIMARY">
+      <columns>IdLibro</columns>
+      <primary>1</primary>
+    </key>
+    <key id="38" parent="9" name="libros_IdLibro_uindex">
+      <columns>IdLibro</columns>
+      <underlying-index>libros_IdLibro_uindex</underlying-index>
+    </key>
+    <key id="39" parent="9" name="ISBN">
+      <columns>ISBN</columns>
+      <underlying-index>ISBN</underlying-index>
+    </key>
+    <column id="40" parent="10" name="IdParametro">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="41" parent="10" name="Atributo">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="42" parent="10" name="Descripcion">
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="43" parent="10" name="Estado">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <key id="44" parent="10" name="PRIMARY">
+      <columns>IdParametro</columns>
+      <primary>1</primary>
+    </key>
+    <column id="45" parent="11" name="Id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="46" parent="11" name="IdLibroPres">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="47" parent="11" name="IdUsuario">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="48" parent="11" name="FPrestamo">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+      <default-expression>&apos;0000-00-00&apos;</default-expression>
+    </column>
+    <column id="49" parent="11" name="Aprobado">
+      <mandatory>1</mandatory>
+      <data-type>varchar(2)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <index id="50" parent="11" name="IdLibroPres">
+      <columns>IdLibroPres</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="51" parent="11" name="IdPrestamo">
+      <columns>IdLibroPres</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="52" parent="11" name="IdUsuario">
+      <columns>IdUsuario</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="53" parent="11" name="PRIMARY">
+      <columns>Id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="54" parent="11" name="prestamos_ibfk_4">
+      <columns>IdLibroPres</columns>
+      <ref-key>~.libros.ISBN</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="55" parent="11" name="prestamos_ibfk_2">
+      <columns>IdUsuario</columns>
+      <ref-key>~.usuarios.Identificacion</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="56" parent="12" name="IdValorParametro">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="57" parent="12" name="Valor">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="58" parent="12" name="ValorX">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="59" parent="12" name="Orden">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="60" parent="12" name="Estado">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="61" parent="12" name="IdParametro">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="62" parent="12" name="IdParametro">
+      <columns>IdParametro</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="63" parent="12" name="PRIMARY">
+      <columns>IdValorParametro</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="64" parent="12" name="IdParametro">
+      <columns>IdParametro</columns>
+      <ref-key>~.parametro.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="65" parent="13" name="Id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="66" parent="13" name="IdPrestamo">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="67" parent="13" name="Fdevolucion">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+      <default-expression>&apos;0000-00-00&apos;</default-expression>
+    </column>
+    <column id="68" parent="13" name="Ftope">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+      <default-expression>&apos;0000-00-00&apos;</default-expression>
+    </column>
+    <column id="69" parent="13" name="Comentario">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="70" parent="13" name="Devuelto">
+      <mandatory>1</mandatory>
+      <data-type>varchar(4)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <index id="71" parent="13" name="IdPrestamo">
+      <columns>IdPrestamo</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="72" parent="13" name="PRIMARY">
+      <columns>Id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="73" parent="13" name="detalleprestamo_ibfk_1">
+      <columns>IdPrestamo</columns>
+      <ref-key>~.prestamos.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="74" parent="14" name="Id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="75" parent="14" name="Identificacion">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="76" parent="14" name="NickName">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="77" parent="14" name="Contrasena">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="78" parent="14" name="PNombre">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="79" parent="14" name="SNombre">
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="80" parent="14" name="PApellido">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="81" parent="14" name="SApellido">
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="82" parent="14" name="Direccion">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="83" parent="14" name="Grado">
+      <mandatory>1</mandatory>
+      <data-type>int(1)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="84" parent="14" name="FechaNacimiento">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+      <default-expression>&apos;0000-00-00&apos;</default-expression>
+    </column>
+    <column id="85" parent="14" name="Telefono">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="86" parent="14" name="Correo">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="87" parent="14" name="IdPrestamo">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="88" parent="14" name="IdEstadoEst">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="89" parent="14" name="IdTipoUsuario">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="90" parent="14" name="Cookie">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="91" parent="14" name="VecesPrestado">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="92" parent="14" name="Identificacion">
+      <columns>Identificacion</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="93" parent="14" name="IdEstadoEst">
+      <columns>IdEstadoEst</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="94" parent="14" name="IdPrestamo">
+      <columns>IdPrestamo</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="95" parent="14" name="IdTipoUsuario">
+      <columns>IdTipoUsuario</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="96" parent="14" name="PRIMARY">
+      <columns>Id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="97" parent="14" name="Identificacion">
+      <columns>Identificacion</columns>
+      <underlying-index>Identificacion</underlying-index>
+    </key>
+    <column id="98" parent="15" name="Id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="99" parent="15" name="IdUsuario">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="100" parent="15" name="IP">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <column id="101" parent="15" name="FIngreso">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+      <default-expression>&apos;0000-00-00&apos;</default-expression>
+    </column>
+    <index id="102" parent="15" name="IdUsuario">
+      <columns>IdUsuario</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="103" parent="15" name="PRIMARY">
+      <columns>Id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="104" parent="15" name="ipusuarios_ibfk_1">
+      <columns>IdUsuario</columns>
+      <ref-key>~.usuarios.Identificacion</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>
